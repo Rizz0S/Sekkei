@@ -1,0 +1,4 @@
+<% @posts.each do |post|
+    <%= post.user.name %>
+    <%= link_to  "Post #{post.title}", post_path(post)
+    <% end %>

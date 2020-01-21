@@ -1,0 +1,4 @@
+<% @origamis.each do |origami|
+<%= origami.finished_image_url %>
+<%= link_to  "Origami #{origami.title}", origami_path(origami)
+<% end %>
