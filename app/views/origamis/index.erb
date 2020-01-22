@@ -1,4 +1,9 @@
-<% @origamis.each do |origami|
-<%= origami.finished_image_url %>
-<%= link_to  "Origami #{origami.title}", origami_path(origami)
+<h1>Origamis</h1>
+<hr>
+
+<% @origamis.each do |origami| %>
+    <%= link_to(origami.title, origami_path(origami)) %>
+    <br>
+    <img src="<%= origami.finished_image_url %>" alt="<%= origami.title%>" style="width:200px;height:200px;">
+    <hr style="border-top: dotted 1px;" />
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_153707) do
+ActiveRecord::Schema.define(version: 2020_01_21_220620) do
 
   create_table "baskets", force: :cascade do |t|
     t.integer "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_01_21_153707) do
   create_table "origamis", force: :cascade do |t|
     t.string "title"
     t.string "category"
-    t.string "type"
+    t.string "style"
     t.integer "difficulty"
     t.string "finished_image_url"
     t.string "instruction_image_url"

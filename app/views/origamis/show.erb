@@ -1,8 +1,15 @@
-<%=@origami.title%>
-<%=@origami.category%>
-<%=@origami.type%>
+<h2><%=@origami.title%></h2>
+<br>
+<h4><%=@origami.category%></h4>
+<br>
+<%=@origami.style%>
+<br>
 <%=@origami.difficulty%>
-<%=@origami.finished_image_url%>
-<%=@origami.instruction_image_url%>
-<%=@origami.description%>
+<br>
+<img src="<%= @origami.finished_image_url %>" alt="<%= @origami.title%>" style="width:200px;height:200px;">
+<h3>Diagram</h3>
+<iframe src="<%= @origami.instruction_image_url %>" alt="Instructions" height="1150" width="800"></iframe>
+<p><%=@origami.description%></p>
+
+<%= link_to("Back to all origami patterns.", origamis_path)%>
 

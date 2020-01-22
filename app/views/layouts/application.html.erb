@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sekkei</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<head>
+<h1>∵ Sekkei ∴</h2>
+<div>
+<nav>
+<h4>
+<%= link_to("Origamis", origamis_path)%> //
+<%=link_to("Posts", posts_path) %>
+</h4>
+<%# <%= link_to("Origamis", origamis_path) %> 
+</nav>
+</div>
+</head>
+<body style="background-color:#ffe6e6">
     <%= yield %>
-  </body>
+</body>
+  
 </html>
