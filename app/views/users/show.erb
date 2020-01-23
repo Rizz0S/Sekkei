@@ -1,2 +1,11 @@
 <h3> Folder: <%=@user.name%> </h3>
-<p>Bio // <%=@user.bio%></p>
+<h4>Bio // </h4> <p><%=@user.bio%></p>
+
+<h4>Posts:</h4>
+<ul>
+<%@posts.each do |post|%>
+    <li><h4><%= link_to(post.title, post_path(post.id))%></h4></li>
+
+<%end%>
+</ul>
+

@@ -10,25 +10,29 @@ class PostsController < ApplicationController
 
     def new
     @post = Post.new
-    render "form"
+    @users = User.all
+    @origamis = Origami.all
+
     end
 
     def create
-    @post = Post.create(post_params)
-    @users = User.all
-    @origamis = Origami.all
-    redirect_to post_path(post)
+    post = Post.create(post_params)
+
+
+    redirect_to post_path(post.id)
 
     end
 
     def edit
     @post = Post.find(params[:id])
-    render "form"
+
     end
 
     def update
-    Post.update(post_params)
-    redirect_to post_path(post)
+    @post.update(post_params)
+
+    redirect_to post_path(@post.id)
+
     end
 
     private
