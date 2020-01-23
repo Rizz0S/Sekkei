@@ -1,0 +1,22 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color: red;">
+      <%= error %>
+    </p>
+  <% end %>
+<% end %>
+
+<h2>Login</h2>
+
+<%= form_for :session, url: create_login_session_path do |f| %>
+  <h5><%= f.label :username %></h5>
+  <%= f.text_field :username %>
+
+  <h5><%= f.label :password %></h5>
+  <%= f.password_field :password %>
+  <br>
+  <br>
+  <%= f.submit("Login")%>
+<% end %>
+
+<h5>Don't have an account yet? Why not <%=link_to("sign up?", new_user_path)%></h5>

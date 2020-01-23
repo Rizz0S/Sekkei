@@ -6,8 +6,8 @@ Post.destroy_all
 
 #Create a few user instances
 puts "Seeding users...."
-u1 = User.create(name: "Summer", username: "summeroo", password: "meep123", bio: "Folding paper puts me in a tranquil state.")
-u2 = User.create(name: "Monsur", username: "mk17173n", password: "spiderman101", bio: "I love comic books and making origami!")
+u1 = User.create(name: "Summer", username: "summeroo", bio: "Folding paper puts me in a tranquil state.")
+u2 = User.create(name: "Monsur", username: "mk17173n", bio: "I love comic books and making origami!")
 
 #Array containing info for origami instances
 origamis = [

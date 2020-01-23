@@ -1,8 +1,10 @@
 <% if flash[:errors] %>
-    <% flash[:errors].each do |message| %>
-        <p style="color: white;"> <%= message %> </p>
-    <% end%>
-    <% end%>
+  <% flash[:errors].each do |error| %>
+    <p style="font-weight: bold">
+      <%= error %>
+    </p>
+  <% end %>
+<% end %>
 
 <%= form_for @post do |f| %>
     <p><%= f.label :title%></p>
@@ -17,7 +19,7 @@
 
     <p><%= f.label :origami_id %></p>
     <%= f.collection_select :origami_id, @origamis, :id, :title %>
-    <br><br>
+
     <%= f.submit %>
 <% end %>
 

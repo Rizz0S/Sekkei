@@ -17,9 +17,12 @@ class PostsController < ApplicationController
 
     def create
     @post = Post.create(post_params)
+
     if @post.valid?
         redirect_to post_path(@post.id)
     else
+        flash[:errors] = @post.errors.full_messages
+        
         redirect_to new_post_path
     end
 
@@ -40,7 +43,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-    params.require(:post).permit(:user_id, :origami_id, :content, :title)
+        params.require(:post).permit(:user_id, :origami_id, :content, :title)
     end
     
 

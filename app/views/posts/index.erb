@@ -1,6 +1,6 @@
 <% @posts.each do |post|%>
     <h2> Post: <%= link_to(post.title, post_path(post))%></h2>
     <br>
-    <h4>Folder: <%= post.user.name %></h4>
+    <h4>Folder: <%= post.user.username %></h4>
     <hr>
 <% end %>
