@@ -2,13 +2,15 @@
 <html>
 <head>
 <h1>∵ Sekkei ∴</h2>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div>
 <nav>
 <h4>
 <%= link_to("Origamis", origamis_path)%> //
-<%=link_to("Posts", posts_path) %>
+<%= link_to("Posts", posts_path) %> //
+<%= link_to("Origami Search", origamis_search_path) %>
 </h4>
-<%# <%= link_to("Origamis", origamis_path) %> 
+
 </nav>
 </div>
 </head>

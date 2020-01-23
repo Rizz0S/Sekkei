@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+h1 {
+  font-family: "Helvetica";
+  font-weight: lighter;
+}
+
+
+h2 {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  font-stretch: semi-expanded;
+}
+
+h3 {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  font-stretch: semi-expanded;
+}
+
+
+h4 {
+  font-family: "Helvetica";
+  font-weight: lighter;
+  font-stretch: semi-expanded;
+}
+
+
+h5 {
+ font-family: "Helvetica";
+ font-weight: lighter;
+}
+
+
+h6 {
+ font-family: "Helvetica";
+ font-weight: lighter;
+}
+
+p {
+  font-family: "Baskerville";
+ }
+
+div.polaroid {
+  width: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 243, 255, 0.2), 0 6px 20px 0 rgba(66, 78, 84, 0.19);
+  margin-bottom: 25px;
+}
+

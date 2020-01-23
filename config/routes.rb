@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :posts
-  resources :origamis
-  resources :baskets
-  resources :users
+
+  
+  resources :posts, except: [:destroy]
+  resources :baskets, only: [:show]
+  resources :users, only: [:show]
+  resources :origamis, only: [:index, :show]
+  get '/search', to: 'origamis#search', as: 'origamis_search'
+  get '/results', to: 'origamis#results', as: 'origamis_search_results'
+
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  # get '/search', to 'origamis#search', as: 'search'
+  # get '/movies/:id', to: 'movies#show', as: 'movie'
+  
 end

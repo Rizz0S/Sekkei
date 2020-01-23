@@ -2,8 +2,10 @@
 <hr>
 
 <% @origamis.each do |origami| %>
-    <%= link_to(origami.title, origami_path(origami)) %>
+    <h3><%= link_to(origami.title, origami_path(origami)) %></h3>
     <br>
+    <div class="polaroid">
     <img src="<%= origami.finished_image_url %>" alt="<%= origami.title%>" style="width:200px;height:200px;">
+    </div>
     <hr style="border-top: dotted 1px;" />
 <% end %>
