@@ -17,8 +17,11 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @users = User.all
     @origamis = Origami.all
-    redirect_to post_path(post)
-
+    if @post.valid?
+    redirect_to post_path(@post.id)
+    else
+     render "form"
+    end
     end
 
     def edit
@@ -28,7 +31,7 @@ class PostsController < ApplicationController
 
     def update
     Post.update(post_params)
-    redirect_to post_path(post)
+    redirect_to post_path(@post.id)
     end
 
     private

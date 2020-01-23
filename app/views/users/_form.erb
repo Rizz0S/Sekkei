@@ -1,6 +1,6 @@
 <% if flash[:errors] %>
 <% flash[:errors].each do |message| %>
-<p style="color: white;"> <%= message %> </p>
+<p style="color: red;"> <%= message %> </p>
 <% end%>
 <% end%>
 <%= form_for @user do |f| %>
@@ -12,6 +12,9 @@
 <br>
 <br>
 <%= f.label :password%> <%= f.text_field :password%>
+<br>
+<br>
+<%= f.label :bio%> <%= f.text_field :bio%>
 <br>
 <br>
 <%= f.submit %>
