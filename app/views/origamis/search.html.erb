@@ -1,15 +1,25 @@
-<h2>Search for origami</h2>
+<div class="origami-search-container">
+    <div class="header-container">
 
-<%= form_tag(origamis_search_results_path, :method => "get") do %>  
-  <h5><%= label_tag(:title, "Search by title:") %></h5>
-  <%= select_tag(:title, options_for_select(@origami_titles), {prompt: "title..."})%>
+      <h2>⋰ Search for origami ⋱</h2>
 
-  <h5> <%= label_tag(:category, "Search by category:") %></h5>
-  <%= select_tag(:category, options_for_select(@origami_categories, " "), {prompt: "category..."}) %>
+    </div>
 
-  <h5><%= label_tag(:difficulty, "Search by difficulty:") %></h5>
-  <%= select_tag(:difficulty, options_for_select(@origami_difficulties, " "), {prompt: "difficulty..."}) %></h5>
-  
-  <h5><%= submit_tag("Search") %>
-  
-<% end %>
+    <div class="origami-info">
+
+      <%= form_tag(origamis_search_results_path, :method => "get") do %>  
+        <h3><%= label_tag(:title, "Search by title:") %></h3>
+        <%= select_tag(:title, options_for_select(@origami_titles), {prompt: "title..."})%>
+
+        <h3> <%= label_tag(:category, "Search by category:") %></h3>
+        <%= select_tag(:category, options_for_select(@origami_categories, " "), {prompt: "category..."}) %>
+
+        <h3><%= label_tag(:difficulty, "Search by difficulty:") %></h3>
+        <%= select_tag(:difficulty, options_for_select(@origami_difficulties, " "), {prompt: "difficulty..."}) %></h3>
+        
+        <h3><%= submit_tag("Search") %>
+        
+      <% end %>
+      </div>
+
+      </div>

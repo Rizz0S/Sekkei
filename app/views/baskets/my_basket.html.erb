@@ -1,21 +1,35 @@
-<h2> 🛒 My Basket 🛒</h2>
-<hr>
-<%if @basket.length > 0%>
-    <ul>
-    <%@basket.each do |origami|%>
-        <li><h4><%= link_to(origami.title, origami_path(origami.id))%></h4></li>
-        <div class="polaroid">
-            <img src="<%= origami.finished_image_url %>" alt="<%= origami.title%>" style="width:100px;height:100px;">
-        </div>
-        <%= button_to("Remove From Basket 🗑", "/origamis/#{origami.id}/delete_from_basket", method: :delete,  params: { origami_id: origami.id })%>
-    <%end%>
-    </ul>
-    <h3>Recommended pattern based your basket:</h3>
-    <h4><%= link_to(@recommended.title, origami_path(@recommended.id))%></h4>
-    <div class="polaroid">
-            <img src="<%= @recommended.finished_image_url %>" alt="<%= @recommended.title%>" style="width:100px;height:100px;">
+
+<div class="basket-show-container">
+    <div class="header-container">
+        <h2> ▧ My Basket ▨ </h2>
     </div>
-<%else%>
-    <p>--Your basket is empty. <%=link_to("Add some?", origamis_path)%> </p>
-<%end%>
+
+    <div class="basket-info-container">
+        <%if (@basket.size > 0)%>
+            <%@basket.each do |origami|%>
+                <h4><%= link_to(origami.title, origami_path(origami.id))%></h4>
+                <div class="polaroid">
+                    <img src="<%= origami.finished_image_url %>" alt="<%= origami.title%>" style="width:100px;height:100px;">
+                </div>
+                <br>
+                <h6><%= link_to("Remove 🗑", "/origamis/#{origami.id}/delete_from_basket", method: :delete,  params: { origami_id: origami.id })%></h6>
+                <br>
+            <%end%>
+    </div>
+    <div class="basket-info-container">
+        <h3>Recommended pattern based your basket:</h3>
+        <h4><%= link_to(@recommended.title, origami_path(@recommended.id))%></h4>
+        <div class="polaroid">
+            <img src="<%= @recommended.finished_image_url %>" alt="<%= @recommended.title%>" style="width:100px;height:100px;">
+        </div>
+    </div>
+
+        <%else%>
+        <div class="basket-info-container">
+            <p>--Your basket is empty. <%=link_to("Add some?", origamis_path)%> </p>
+        </div>
+        <%end%>
+    
 </ul>
+
+</div>

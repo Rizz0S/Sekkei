@@ -1,17 +1,25 @@
-<h3> <%=@user.name%> </h3>
-<h4> <i>username ::</i> <%=@user.username%> </h4>
-<h4>Bio: </h4> <p><%=@user.bio%></p>
+<div class="user-show-container">
+    <div class="header-container">
+    
+        <h2> <%=@user.name%> </h3>
+        <h3> <i>username </i> // <%=@user.username%> </h4>
+    </div>
 
-<h4>Posts:</h4>
-<ul>
-<%if @posts.length > 0%>
-    <%@posts.each do |post|%>
-        <li><h4><%= link_to(post.title, post_path(post.id))%></h4></li>
-    <%end%>
-<%else%>
-    <p>--This user has yet to write any posts.</p>
-<%end%>
-</ul>
+    <div class="user-info-container">
+        <h3>Bio: </h3> <p><%=@user.bio%></p>
+    </div>
+
+    <div class="user-info-container">
+        <h3>Posts:</h3>
+        <%if @posts.length > 0%>
+            <%@posts.each do |post|%>
+                <h4><%= link_to(post.title, post_path(post.id))%></h4>
+            <%end%>
+        <%else%>
+            <p>--This user has yet to write any posts.</p>
+        <%end%>
+    </div>
+</div>
 
 
 

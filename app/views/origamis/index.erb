@@ -1,11 +1,20 @@
-<h1>Origamis</h1>
-<hr>
-
-<% @origamis.each do |origami| %>
-    <h3><%= link_to(origami.title, origami_path(origami)) %></h3>
-    <br>
-    <div class="polaroid">
-    <img src="<%= origami.finished_image_url %>" alt="<%= origami.title%>" style="width:200px;height:200px;">
+<div class="origami-index-container">
+    <div class="header-container">
+        <h1>Origamis</h1>
     </div>
-    <hr style="border-top: dotted 1px;" />
-<% end %>
+</div>
+
+<div class="origami-show-container">
+
+    <div class="origami-list-container">
+    <% @origamis.each do |origami| %>
+        <div class="origami-item-container">
+            <div class="origami-list-polaroid polaroid">
+            <h3><%= link_to(origami.title, origami_path(origami)) %></h3>
+            <img src="<%= origami.finished_image_url %>" alt="<%= origami.title%>" style="width:200px;height:200px;">
+            </div>
+        </div>
+    <% end %>
+    </div>
+
+ </div>

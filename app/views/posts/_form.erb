@@ -1,10 +1,15 @@
+
 <% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <p style="font-weight: bold">
-      <%= error %>
-    </p>
-  <% end %>
+    <div class="post-info-container">
+    <% flash[:errors].each do |error| %>
+      <p style="font-weight: bold">
+        <%= error %>
+      </p>
+    <% end %>
+  </div>
 <% end %>
+
+<div class="post-info-container">
 
 <%= form_for @post do |f| %>
     <p><%= f.label :title%></p>
@@ -13,15 +18,15 @@
     <p><%= f.label :content%> </p>
      <%= f.text_area :content %>
 
-
-    <p><%= f.label :user_id %></p>
-    <%= f.collection_select :user_id, @users, :id, :name %>
-
     <p><%= f.label :origami_id %></p>
     <%= f.collection_select :origami_id, @origamis, :id, :title %>
+    <br>
+
+    <%f.hidden_field :user_id, value: @logged_in_user.id%>
 
     <%= f.submit %>
 <% end %>
 
+</div>
 
 

@@ -6,8 +6,8 @@ Post.destroy_all
 
 #Create a few user instances
 puts "Seeding users...."
-u1 = User.create(name: "Summer", username: "summeroo", bio: "Folding paper puts me in a tranquil state.")
-u2 = User.create(name: "Monsur", username: "mk17173n", bio: "I love comic books and making origami!")
+u1 = User.create(name: "Summer Rizzo", username: "summeroo", bio: "Folding paper puts me in a tranquil state.")
+u2 = User.create(name: "Monsur Kahn", username: "mk17173n", bio: "I love comic books and making origami!")
 
 #Array containing info for origami instances
 origamis = [
@@ -39,7 +39,7 @@ origamis = [
     category: "Flower",
     style: "Traditional",
     difficulty: 4,
-    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/atsushi-cup.jpg?itok=LJ66H3cI",
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/iris.jpg?itok=voIC19ac",
     instruction_image_url: "https://origamiusa.org/files/iris.pdf",
     description: "An iris flower head."
     },
@@ -47,9 +47,81 @@ origamis = [
     category: "Object",
     style: "Traditional",
     difficulty: 2,
-    finished_image_url: "https://origamiusa.org/files/diagrams_pdf_image/traditional_cat_thumb.png",
+    finished_image_url: "",
     instruction_image_url: "https://origamiusa.org/files/atsushi-cup.pdf",
     description: "A small cup."
+    },
+    {title: "Crane",
+    category: "Animal",
+    style: "Traditional",
+    difficulty: 3,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/traditional-crane.jpg?itok=UIWd4WQp",
+    instruction_image_url: "https://origamiusa.org/files/traditional-crane.pdf",
+    description: "The classic crane origami. It does not tweet."
+    },
+    {title: "Flower with Leaf",
+    category: "Flower",
+    style: "Traditional",
+    difficulty: 5,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/flower-with-leaf.jpg?itok=bmVRQmr9",
+    instruction_image_url: "https://origamiusa.org/files/flower-with-leaf.pdf",
+    description: "Flower with a pointy leaf attachment. Don't worry; there are no thorns."
+    },
+    {title: "Pencil",
+    category: "Object",
+    style: "Traditional",
+    difficulty: 1,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/pencil.jpg?itok=PLhh7RHM",
+    instruction_image_url: "https://origamiusa.org/files/pencil.pdf",
+    description: "The top half of a pencil. It doesn't write, but maybe if you dipped it in ink it could. Something to ponder."
+    },
+    {title: "Swan",
+    category: "Animal",
+    style: "Traditional",
+    difficulty: 4,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/atsushi-swan.jpg?itok=DIHxoIhh",
+    instruction_image_url: "https://origamiusa.org/files/atsushi-swan.pdf",
+    description: "A beautiful, traditional swan. More elegant, albeit more difficult, than the classic crane."
+    },
+    {title: "Tulip",
+    category: "Flower",
+    style: "Traditional",
+    difficulty: 4,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/tulip-traditional.jpg?itok=eyVanw_x",
+    instruction_image_url: "https://origamiusa.org/files/tulip-traditional.pdf",
+    description: "A tulip head. The instructions include a leaf, but it is optional."
+    },
+    {title: "Brachiosaurus",
+    category: "Object",
+    style: "Traditional",
+    difficulty: 5,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/bachis_brachiosaurus.jpg?itok=ZZCUMXGs",
+    instruction_image_url: "https://origamiusa.org/files/diagrams_pdf/bachis_brachiosaurus.pdf",
+    description: "Large dinosaur with large neck."
+    },
+    {title: "Boat",
+    category: "Object",
+    style: "Traditional",
+    difficulty: 1,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/traditional_boat_thumb.png?itok=il6aa8VX",
+    instruction_image_url: "https://origamiusa.org/files/traditional_boat.pdf",
+    description: "A small boat. Not recommended for practical use."
+    },
+    {title: "Grasshopper",
+    category: "Animal",
+    style: "Traditional",
+    difficulty: 2,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/grasshopper.jpg?itok=WI0haQM6",
+    instruction_image_url: "https://origamiusa.org/files/grasshopper.pdf",
+    description: "A grasshopper. Ironically, it can't hop, nor is it made of grass."
+    },
+    {title: "Box",
+    category: "Object",
+    style: "Traditional",
+    difficulty: 1,
+    finished_image_url: "https://origamiusa.org/files/styles/diagrams_image/public/diagrams_pdf_image/atsushi-box-traditional.jpg?itok=ndbeVIsI",
+    instruction_image_url: "https://origamiusa.org/files/atsushi-box-traditional.pdf",
+    description: "A small box for storing small things."
     }
 ]
 

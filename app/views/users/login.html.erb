@@ -6,17 +6,24 @@
   <% end %>
 <% end %>
 
-<h2>Login</h2>
+<div class="user-show-container">
+    <div class="user-info-container">
 
-<%= form_for :session, url: create_login_session_path do |f| %>
-  <h5><%= f.label :username %></h5>
-  <%= f.text_field :username %>
+      <h2>Login</h2>
 
-  <h5><%= f.label :password %></h5>
-  <%= f.password_field :password %>
-  <br>
-  <br>
-  <%= f.submit("Login")%>
-<% end %>
+      <%= form_for :session, url: create_login_session_path do |f| %>
+        <h5><%= f.label :username %></h5>
+        <%= f.text_field :username %>
 
-<h5>Don't have an account yet? Why not <%=link_to("sign up?", new_user_path)%></h5>
+        <h5><%= f.label :password %></h5>
+        <%= f.password_field :password %>
+        <br>
+        <br>
+        <%= f.submit("Login")%>
+      <% end %>
+    </div>
+
+
+  <h5>Don't have an account yet? Why not <%=link_to("sign up?", new_user_path)%></h5>
+
+</div>

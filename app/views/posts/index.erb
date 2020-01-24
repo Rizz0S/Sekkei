@@ -1,5 +1,25 @@
-<% @posts.each do |post|%>
-    <h2> Post: <%= link_to(post.title, post_path(post))%></h2>
-    <h5> Folder: <%= post.user.username %></h5>
-    <hr>
-<% end %>
+
+ <div class="post-header-container">
+    <div class="post-info-container">
+        <h2>Posts</h2>
+    </div>
+</div>
+<br>
+
+<div class="post-show-container">
+    <% if @logged_in_user%>
+      <div class="create-post-link-background">
+        <%= link_to("Create a post", new_post_path)%>
+      </div>
+    <%end%>
+</div>
+        
+    <br>
+     <% @posts.each do |post|%>
+        <div class="post-show-container">
+        <div class="header-container">
+            <h2> <%= link_to(post.title, post_path(post))%></h2>
+            <h5>Folder: <%=link_to(post.user.username, user_path(post.user.id))%></h5>
+        </div>
+        </div>
+    <% end %>

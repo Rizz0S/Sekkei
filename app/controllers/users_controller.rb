@@ -62,7 +62,7 @@ class UsersController < ApplicationController
         
         @logged_in_user.add_to_basket(origami)
 
-        redirect_to user_path(@logged_in_user.id)
+        redirect_to my_basket_path
     end
 
 
@@ -73,7 +73,7 @@ class UsersController < ApplicationController
         
         @logged_in_user.delete_from_basket(origami)
 
-        redirect_to user_path(@logged_in_user.id)
+        redirect_to my_basket_path
     end
 
     #-------------STRONG-PARAMS-------------#

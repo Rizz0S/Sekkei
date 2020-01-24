@@ -1,3 +1,54 @@
 // Place all the styles related to the Origamis controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.origami-item-container {
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+.origami-list-polaroid h3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+
+.origami-list-polaroid h3:hover {
+    opacity: 1;
+}
+
+.origami-show-container{
+    text-align: center;
+    margin: auto;
+    width: 900px;
+}
+
+.origami-index-container{
+    text-align: center;
+    margin: auto;
+    width: 300px;
+}
+
+.origami-search-container{
+    text-align: center;
+    margin: auto;
+    width: 400px;
+}
+
+.origami-info {
+    border: 1px lightgrey solid;
+    background-image: url(https://i.imgur.com/CqO9lhX.jpg);
+    background-color: white;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
+}
