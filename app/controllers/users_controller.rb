@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
 
+
+
     #-------------READ-------------#
     
     def show
         @user = User.find(params[:id])
         @posts = @user.posts
+        @basket = @user.basket_origamis
     end
 
     #-------------CREATE-------------#
@@ -44,6 +47,35 @@ class UsersController < ApplicationController
         end
     end
 
+    def logout
+        session[:user_id] = nil
+
+        redirect_to origamis_path
+    end
+
+
+
+    #-------------ADD-TO-BASKET-------------#
+
+    def add_to_basket
+        origami = Origami.find(params[:origami_id])
+        
+        @logged_in_user.add_to_basket(origami)
+
+        redirect_to user_path(@logged_in_user.id)
+    end
+
+
+    #-------------DELETE-FROM-BASKET-------------#
+
+    def delete_from_basket
+        origami = Origami.find(params[:origami_id])
+        
+        @logged_in_user.delete_from_basket(origami)
+
+        redirect_to user_path(@logged_in_user.id)
+    end
+
     #-------------STRONG-PARAMS-------------#
 
     private
@@ -51,10 +83,5 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:username, :password, :name, :bio)
     end
-
-    # def session_params
-    #     params.require(:session).permit(:username, :password)
-    # end
-
 
 end

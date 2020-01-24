@@ -2,14 +2,30 @@
 <html>
 <head>
 <h1>∵ Sekkei ∴</h2>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 <div>
 <nav>
 <h4>
 <%= link_to("Origamis", origamis_path)%> //
 <%= link_to("Posts", posts_path) %> //
-<%= link_to("Origami Search", origamis_search_path) %> //
-<%= link_to("Login", login_path) %>
+<%= link_to("Origami Search", origamis_search_path) %> 
+<hr class="navbar-hr" style="border-top: dotted 1px;">
+    <% if @logged_in_user %>
+        <%# <div class="navbar-right"> %>
+        <div> </div>
+        
+        Welcome, <%= @logged_in_user.name %>!
+        <%= link_to("🛒", my_basket_path) %>
+        <%= link_to("Logout", logout_path, :method => 'delete') %>
+        <%# </div> %>
+    <% else %>
+        <%# <div class="navbar-right"> %>
+        <%= link_to("Login", login_path) %>
+        <%# </div> %>
+    <%end%>
 
 </h4>
 

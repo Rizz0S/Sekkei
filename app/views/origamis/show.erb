@@ -1,5 +1,13 @@
 <h2><%=@origami.title%></h2>
 <br>
+
+<% if (@logged_in_user && !@logged_in_user.basket_origamis.include?(@origami))%>
+    <%= button_to("Add to my basket", add_to_basket_path, method: :post,  params: { origami_id: @origami.id })%>
+<% elsif (@logged_in_user && @logged_in_user.basket_origamis.include?(@origami))%>
+    <%= button_to("Remove from my basket", delete_from_basket_path, method: :delete,  params: { origami_id: @origami.id })%>
+<%end%>
+
+
 <h3>Category // <%=@origami.category%></h3>
 <br>
 <h3>Style //  <%=@origami.style%></h3>
@@ -9,7 +17,7 @@
 <h4>Description:</h4>
 <p><%=@origami.description%></p>
 <div class="polaroid">
-<img src="<%= @origami.finished_image_url %>" alt="<%= @origami.title%>" style="width:200px;height:200px;">
+    <img src="<%= @origami.finished_image_url %>" alt="<%= @origami.title%>" style="width:200px;height:200px;">
 </div>
 <h3>Folding Diagram:</h3>
 <iframe src="<%= @origami.instruction_image_url %>" alt="Instructions" height="1150" width="800"></iframe>
